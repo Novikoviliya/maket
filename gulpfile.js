@@ -18,6 +18,7 @@ const styles = () => {
             autoprefixer(),
             csso()
         ]))
+        .pipe(sourcemap.write("."))
         .pipe(gulp.dest('source/css'))
         .pipe(sync.stream());
 }
@@ -56,14 +57,13 @@ const reload = done => {
 // Watcher
 
 const watcher = () => {
-    gulp.watch('./source/sass/**/*.sass', gulp.series(styles));
+    gulp.watch('./source/sass/**/*.sсss', gulp.series(styles));
     gulp.watch('./source/*.html', gulp.series(reload));
 }
 
 // Default
 exports.default =
     gulp.series(
-        styles,
         server,
         watcher
     );
