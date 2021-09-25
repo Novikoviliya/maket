@@ -1,16 +1,16 @@
-const gulp = require("gulp");
-const plumber = require("gulp-plumber");
-const sourcemap = require("gulp-sourcemaps");
-const postcss = require("gulp-postcss");
-const autoprefixer = require("autoprefixer");
-const sass = require("gulp-sass");
-const csso = require("postcss-csso");
-const sync = require("browser-sync").create();
+const gulp = require('gulp');
+const plumber = require('gulp-plumber');
+const sourcemap = require('gulp-sourcemaps');
+const postcss = require('gulp-postcss');
+const autoprefixer = require('autoprefixer');
+const sass = require('gulp-sass')(require('sass'));
+const csso = require('postcss-csso');
+const sync = require('browser-sync').create();
 
 // Styles
 
 const styles = () => {
-    return gulp.src("./source/sass/style.scss")
+    return gulp.src('./source/sass/style.scss')
         .pipe(plumber())
         .pipe(sourcemap.init())
         .pipe(sass())
@@ -18,6 +18,7 @@ const styles = () => {
             autoprefixer(),
             csso()
         ]))
+        .pipe(gulp.dest('source/css'))
         .pipe(sync.stream());
 }
 
@@ -34,7 +35,7 @@ exports.build = build;
 const server = (done) => {
     sync.init({
         server: {
-            baseDir: "source"
+            baseDir: 'source'
         },
         cors: true,
         notify: false,
@@ -55,8 +56,8 @@ const reload = done => {
 // Watcher
 
 const watcher = () => {
-    gulp.watch("./source/sass/**/*.sass", gulp.series(styles));
-    gulp.watch("./source/*.html", gulp.series(reload));
+    gulp.watch('./source/sass/**/*.sass', gulp.series(styles));
+    gulp.watch('./source/*.html', gulp.series(reload));
 }
 
 // Default
