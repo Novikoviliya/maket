@@ -1,0 +1,31 @@
+{
+    "name": "dog",
+    "version": "1.0.0",
+    "description": "what is dog eat",
+    "main": "index.js",
+    "scripts": {
+        "build": "gulp build",
+        "start": "gulp"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Novikoviliya/maket.git"
+    },
+    "author": "Ilya",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/Novikoviliya/maket/issues"
+    },
+    "homepage": "https://github.com/Novikoviliya/maket#readme",
+    "devDependencies": {
+        "autoprefixer": "^10.3.5",
+        "browser-sync": "^2.27.5",
+        "gulp": "^4.0.2",
+        "gulp-plumber": "^1.2.1",
+        "gulp-postcss": "^9.0.1",
+        "gulp-rename": "^2.0.0",
+        "gulp-sass": "^5.0.0",
+        "gulp-sourcemaps": "^3.0.0",
+        "postcss-csso": "^5.0.1"
+    }
+}
