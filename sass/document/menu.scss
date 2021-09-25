@@ -1,0 +1,37 @@
+@media(min-width: 1440px) {
+    .menu {
+        background-image: url('/img/baf.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 800px;
+    }
+    .list {
+        display: flex;
+    }
+    .menu__wrapper {
+        display: flex;
+        justify-content: space-between;
+        margin: 0 120px;
+        padding: 16px 0;
+    }
+    .list__position {
+        display: flex;
+        list-style-type: none;
+        color: white;
+    }
+    .list__item {
+        padding: 10px 50px;
+    }
+    .list__item::first-letter {
+        text-transform: uppercase;
+    }
+    .list__item-link {
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
+        color: #fff;
+    }
+    .items {
+        color: black;
+    }
+}
