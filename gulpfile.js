@@ -5,7 +5,6 @@ const postcss = require("gulp-postcss");
 const autoprefixer = require("autoprefixer");
 const sass = require("gulp-sass");
 const csso = require("postcss-csso");
-const rename = require("gulp-rename");
 const sync = require("browser-sync").create();
 
 // Styles
@@ -29,7 +28,7 @@ exports.styles = styles;
 const server = (done) => {
     sync.init({
         server: {
-            baseDir: "build"
+            baseDir: "source"
         },
         cors: true,
         notify: false,
@@ -50,8 +49,8 @@ const reload = done => {
 // Watcher
 
 const watcher = () => {
-    gulp.watch("./source/sass/**/*.sass", gulp.series(styles));
-    gulp.watch("./source/*.html", gulp.series(html, reload));
+    gulp.watch("source/sass/**/*.sass", gulp.series(styles));
+    gulp.watch("source/*.html", gulp.series(html, reload));
 }
 
 // Default

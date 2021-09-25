@@ -7,6 +7,11 @@
         "build": "gulp build",
         "start": "gulp"
     },
+    "browserslist": [
+        "last 2 versions",
+        "not dead",
+        "not ie <= 11"
+    ],
     "repository": {
         "type": "git",
         "url": "git+https://github.com/Novikoviliya/maket.git"
